@@ -1,0 +1,20 @@
+#!/bin/sh
+
+start() {
+	echo "Loading HX711 Module"
+	modprobe hx711.ko
+}
+
+stop() {
+	echo "Unloading HX711 Module"
+	rmmod hx711.ko
+}
+
+case "$1" in
+	start)
+		start;;
+	stop)
+		stop;;
+	*)
+		start;;
+esac	
