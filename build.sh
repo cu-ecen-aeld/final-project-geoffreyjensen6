@@ -5,6 +5,7 @@
 source shared.sh
 
 EXTERNAL_REL_BUILDROOT=../base_external
+
 git submodule init
 git submodule sync
 git submodule update
@@ -28,6 +29,16 @@ then
 		make -C buildroot defconfig BR2_EXTERNAL=${EXTERNAL_REL_BUILDROOT} BR2_DEFCONFIG=${AESD_DEFAULT_DEFCONFIG}
 	fi
 else
+	echo Building U-boot Boot Script
+	base_external/uboot_scripts/build_boot_scr.sh
+	echo Building Device Tree Overlays
+	base_external/device_tree_overlays/build_dtbos.sh
+	if [ ! -e buildroot/output/images ]
+	then
+		mkdir buildroot/output/images
+	fi
+	cp base_external/uboot_scripts/boot.scr buildroot/output/images/boot.scr
+	find base_external/device_tree_overlays -type f -name "*.dtbo" | xargs cp -vt buildroot/output/images/
 	echo "USING EXISTING BUILDROOT CONFIG"
 	echo "To force update, delete .config or make changes using make menuconfig and build again."
 	make -C buildroot BR2_EXTERNAL=${EXTERNAL_REL_BUILDROOT}

@@ -1,0 +1,25 @@
+# 1 "../board/beaglebone/../../base_external/device_tree_overlays/hx711-beaglebone-black.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "../board/beaglebone/../../base_external/device_tree_overlays/hx711-beaglebone-black.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "/home/geoffreyjensen/Desktop/ECEA5307/final-project-geoffreyjensen6/buildroot/output/build/linux-custom/include/dt-bindings/gpio/gpio.h" 1
+# 5 "../board/beaglebone/../../base_external/device_tree_overlays/hx711-beaglebone-black.dts" 2
+
+&{/chosen} {
+ overlays {
+  BB_HX711.kernel = "Sat May 20 07:33:42 2023";
+ };
+};
+
+&{/} {
+ weight{
+  compatible = "avia,hx711";
+  sck-gpios = <&gpio1 14 0>;
+  dout-gpios = <&gpio1 15 0>;
+  avdd-supply = <&ldo3_reg>;
+  status = "okay";
+ };
+};

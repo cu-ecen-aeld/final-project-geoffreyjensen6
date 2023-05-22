@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+#include </home/geoffreyjensen/Desktop/ECEA5307/final-project-geoffreyjensen6/buildroot/output/build/linux-custom/include/dt-bindings/gpio/gpio.h>
+
+&{/chosen} {
+	overlays {
+		BB_HX711.kernel = __TIMESTAMP__;
+	};
+};
+
+&{/} {
+	weight{
+		compatible = "avia,hx711";
+		sck-gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+		dout-gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+		avdd-supply = <&ldo3_reg>;
+		status = "okay";
+	};			
+};
