@@ -5,4 +5,6 @@ fdt addr 0x88000000
 fdt resize 8192
 load mmc 0:1 0x90000000 hx711-beaglebone-black.dtbo
 fdt apply 0x90000000
+load mmc 0:1 0x91000000 fsr-beaglebone-black.dtbo
+fdt apply 0x91000000
 bootz 0x82000000 - 0x88000000

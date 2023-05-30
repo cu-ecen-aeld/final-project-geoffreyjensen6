@@ -5,16 +5,15 @@
 
 &{/chosen} {
 	overlays {
-		BB_HX711.kernel = __TIMESTAMP__;
+		BB_FSR_NETWORK.kernel = __TIMESTAMP__;
 	};
 };
 
 &{/} {
-	weight{
-		compatible = "avia,hx711";
-		sck-gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
-		dout-gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
-		avdd-supply = <&ldo3_reg>;
+	fsr{
+		compatible = "geoffreyjensen,fsr";
+		spice1-gpio = <&gpio1 12 GPIO_ACTIVE_LOW>;
+		spice2-gpio = <&gpio1 13 GPIO_ACTIVE_LOW>;
 		status = "okay";
 	};			
 };

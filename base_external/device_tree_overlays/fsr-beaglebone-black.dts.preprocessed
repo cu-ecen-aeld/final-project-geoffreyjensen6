@@ -1,0 +1,24 @@
+# 1 "../board/beaglebone/../../base_external/device_tree_overlays/fsr-beaglebone-black.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "../board/beaglebone/../../base_external/device_tree_overlays/fsr-beaglebone-black.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "/home/geoffreyjensen/Desktop/ECEA5307/final-project-geoffreyjensen6/buildroot/output/build/linux-5.4.70/include/dt-bindings/gpio/gpio.h" 1
+# 5 "../board/beaglebone/../../base_external/device_tree_overlays/fsr-beaglebone-black.dts" 2
+
+&{/chosen} {
+ overlays {
+  BB_FSR_NETWORK.kernel = "Tue May 30 07:19:34 2023";
+ };
+};
+
+&{/} {
+ fsr{
+  compatible = "geoffreyjensen,fsr";
+  spice1-gpio = <&gpio1 12 1>;
+  spice2-gpio = <&gpio1 13 1>;
+  status = "okay";
+ };
+};

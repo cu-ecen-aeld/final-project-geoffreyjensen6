@@ -1,0 +1,4 @@
+config BR2_PACKAGE_FSR
+	bool "fsr"
+	help
+	  Includes the driver for the FSR network on ECEA5307 final project spice rack implementation.
