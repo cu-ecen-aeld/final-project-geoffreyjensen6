@@ -14,6 +14,8 @@
 		compatible = "geoffreyjensen,fsr";
 		spice1-gpio = <&gpio1 12 GPIO_ACTIVE_LOW>;
 		spice2-gpio = <&gpio1 13 GPIO_ACTIVE_LOW>;
+		spice3-gpio = <&gpio0 26 GPIO_ACTIVE_LOW>;
+		calibrate-gpio = <&gpio0 27 GPIO_ACTIVE_LOW>;
 		status = "okay";
 	};			
 };

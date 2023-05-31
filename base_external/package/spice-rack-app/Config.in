@@ -1,0 +1,5 @@
+
+config BR2_PACKAGE_SPICE_RACK_APP
+	bool "spice-rack-app"
+	help
+	  Includes the user space application for the Smart Spice Rack implementation for the ECEA5307 Final Project
