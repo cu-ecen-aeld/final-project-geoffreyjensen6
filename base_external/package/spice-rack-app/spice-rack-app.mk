@@ -5,7 +5,7 @@
 #
 ##############################################################
 
-SPICE_RACK_APP_VERSION = '33136d6c21f416dcf9580a470b8c6c8cd9b8501f'
+SPICE_RACK_APP_VERSION = 'd2b0bcf00695caf11b68cfe43369275b0561548d'
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
