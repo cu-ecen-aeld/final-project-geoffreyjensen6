@@ -10,7 +10,7 @@
 
 &{/chosen} {
  overlays {
-  BB_FSR_NETWORK.kernel = "Tue May 30 07:19:34 2023";
+  BB_FSR_NETWORK.kernel = "Wed May 31 14:45:05 2023";
  };
 };
 
@@ -19,6 +19,8 @@
   compatible = "geoffreyjensen,fsr";
   spice1-gpio = <&gpio1 12 1>;
   spice2-gpio = <&gpio1 13 1>;
+  spice3-gpio = <&gpio0 26 1>;
+  calibrate-gpio = <&gpio0 27 1>;
   status = "okay";
  };
 };
